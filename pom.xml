@@ -173,20 +173,7 @@
 		</pluginManagement>
 	</build>
 	<modules>
-		<module>../Wine-Web</module>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		<module>../Wine-Web</module>		
 		<module>../Wine-Data</module>
 		<module>../Wine-Business-Admin</module>
 		<module>../Wine-Business-Customer</module>
