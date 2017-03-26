@@ -33,9 +33,23 @@
 		<surefire.version>2.18.1</surefire.version>
 		<javancss.version>2.1</javancss.version>
 		<cobertura.version>2.7</cobertura.version>
+		<junit.version>4.12</junit.version>
+		<spring.test>4.3.0.RELEASE</spring.test>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.test}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
@@ -175,6 +189,18 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<defaultGoal>install</defaultGoal>
+		<resources>
+			<resource>
+				<directory>../Wine-Data/src/test/resources</directory>
+				<includes>
+					<include>hib.cfg.test.xml</include>
+					<include>springDataTest.xml</include>
+				</includes>
+			</resource>
+		</resources>
+		<directory>${basedir}/target</directory>
+		<finalName>${artifactId}-${version}</finalName>
 	</build>
 	<reporting>
 		<plugins>
